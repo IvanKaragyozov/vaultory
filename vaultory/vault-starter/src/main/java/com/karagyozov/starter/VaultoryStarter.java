@@ -1,4 +1,4 @@
-package com.karagyozov.vaultory;
+package com.karagyozov.starter;
 
 
 import org.springframework.boot.SpringApplication;
@@ -6,12 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-public class VaultoryApplication
+public class VaultoryStarter
 {
-
     public static void main(String[] args)
     {
-        SpringApplication.run(VaultoryApplication.class, args);
+        SpringApplication.run(VaultoryStarter.class, args);
     }
-
 }

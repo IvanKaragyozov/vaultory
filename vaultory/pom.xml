@@ -13,37 +13,58 @@
     <groupId>com.karagyozov</groupId>
     <artifactId>vaultory</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <name>vaultory</name>
     <description>Vaultory is a personal project for storing and accessing images.</description>
 
+    <modules>
+        <module>vault-starter</module>
+        <module>vault-domain</module>
+    </modules>
+
     <properties>
+        <!-- Maven Properties -->
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <!-- Java Version -->
         <java.version>21</java.version>
+        <!-- Spring Security Version -->
+        <spring-security.version>6.2.2</spring-security.version>
+        <!-- PostgreSQL Version -->
+        <postgresql.version>42.7.4</postgresql.version>
+        <!-- Model Mapper Version -->
+        <modelmapper.version>3.2.0</modelmapper.version>
+        <!-- JUnit Version -->
+        <junit.version>5.10.2</junit.version>
+        <!-- Mockito Core Version -->
+        <mockito-core.version>5.11.0</mockito-core.version>
+        <!-- Mockito JUnit-Jupiter Version -->
+        <mockito-junitjupiter.version>5.11.0</mockito-junitjupiter.version>
+        <!-- Lombok Version -->
+        <lombok-version>1.18.30</lombok-version>
+        <!-- Vaadin Version -->
         <vaadin.version>24.5.0</vaadin.version>
     </properties>
 
     <dependencies>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>vaadin-spring-boot-starter</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <!-- version is 42.7.4 -->
-            <scope>runtime</scope>
-        </dependency>
-
     </dependencies>
 
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>com.vaadin</groupId>
+                <artifactId>vaadin-spring-boot-starter</artifactId>
+            </dependency>
+
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgresql.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+
             <dependency>
                 <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-bom</artifactId>
@@ -51,6 +72,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
         </dependencies>
 
     </dependencyManagement>
