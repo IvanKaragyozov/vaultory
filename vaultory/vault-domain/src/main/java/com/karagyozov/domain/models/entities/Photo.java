@@ -15,6 +15,7 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,6 +28,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 
+@Table(name = "photos")
 @Entity
 public class Photo
 {
@@ -49,7 +51,7 @@ public class Photo
     @Column(name = "photo_image_data")
     private byte[] imageData;
 
-    @Column(columnDefinition = "jsonb", name = "photo_meta_data")
+    @Column(columnDefinition = "jsonb", name = "photo_metadata")
     private String metadata;
 
     @Column(name = "photo_size_bytes")
@@ -68,8 +70,8 @@ public class Photo
     @ManyToMany
     @JoinTable(
                     name = "photo_tags",
-                    joinColumns = @JoinColumn(name = "photo_id"),
-                    inverseJoinColumns = @JoinColumn(name = "tag_id")
+                    joinColumns = @JoinColumn(name = "photo_tags_photo_id"),
+                    inverseJoinColumns = @JoinColumn(name = "photo_tags_tag_id")
     )
     private Set<Tag> tags;
 

@@ -16,7 +16,7 @@ CREATE TABLE photos
     photo_image_data  BYTEA        NOT NULL,
     photo_format      VARCHAR(50),
     photo_upload_date TIMESTAMP        DEFAULT CURRENT_TIMESTAMP,
-    photo_metadata    JSONB,
+    photo_metadata    JSONB, -- Extracted metadata (EXIF)
     photo_size_bytes  BIGINT,
     photo_width       INT,
     photo_height      INT
