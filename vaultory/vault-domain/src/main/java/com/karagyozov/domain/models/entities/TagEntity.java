@@ -25,7 +25,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "tags")
-public class Tag
+public class TagEntity
 {
 
     @Id
@@ -36,6 +36,6 @@ public class Tag
     private String tagName;
 
     @ManyToMany(mappedBy = "tags")
-    private Set<Photo> photos;
+    private Set<PhotoEntity> photos;
 
 }

@@ -26,7 +26,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "albums")
-public class Album
+public class AlbumEntity
 {
 
     @Id
@@ -44,6 +44,6 @@ public class Album
     private LocalDateTime createdAt;
 
     @OneToMany(mappedBy = "album")
-    private List<Photo> photos;
+    private List<PhotoEntity> photos;
 
 }

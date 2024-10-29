@@ -30,7 +30,7 @@ import lombok.Setter;
 
 @Table(name = "photos")
 @Entity
-public class Photo
+public class PhotoEntity
 {
 
     @Id
@@ -65,7 +65,7 @@ public class Photo
 
     @ManyToOne
     @JoinColumn(name = "photo_album_id")
-    private Album album;
+    private AlbumEntity album;
 
     @ManyToMany
     @JoinTable(
@@ -73,6 +73,6 @@ public class Photo
                     joinColumns = @JoinColumn(name = "photo_tags_photo_id"),
                     inverseJoinColumns = @JoinColumn(name = "photo_tags_tag_id")
     )
-    private Set<Tag> tags;
+    private Set<TagEntity> tags;
 
 }
