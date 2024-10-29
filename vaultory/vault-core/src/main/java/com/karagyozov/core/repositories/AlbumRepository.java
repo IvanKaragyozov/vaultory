@@ -1,9 +1,14 @@
-package com.karagyozov.core;
+package com.karagyozov.core.repositories;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.karagyozov.domain.models.entities.AlbumEntity;
 
 
-public interface AlbumRepository extends JpaRepository<Album, String>
+@Repository
+public interface AlbumRepository extends JpaRepository<AlbumEntity, String>
 {
+
 }

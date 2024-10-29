@@ -20,6 +20,7 @@
     <modules>
         <module>vault-starter</module>
         <module>vault-domain</module>
+        <module>vault-core</module>
     </modules>
 
     <properties>
