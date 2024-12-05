@@ -2,7 +2,6 @@ package com.karagyozov.domain.models.entities;
 
 
 import java.time.LocalDateTime;
-import java.util.Set;
 import java.util.UUID;
 
 import jakarta.persistence.Column;
@@ -10,14 +9,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
 import jakarta.persistence.Lob;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -27,6 +23,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder(setterPrefix = "set")
 
 @Table(name = "photos")
 @Entity
@@ -62,17 +59,5 @@ public class PhotoEntity
 
     @Column(name = "photo_height")
     private Integer height;
-
-    @ManyToOne
-    @JoinColumn(name = "photo_album_id")
-    private AlbumEntity album;
-
-    @ManyToMany
-    @JoinTable(
-                    name = "photo_tags",
-                    joinColumns = @JoinColumn(name = "photo_tags_photo_id"),
-                    inverseJoinColumns = @JoinColumn(name = "photo_tags_tag_id")
-    )
-    private Set<TagEntity> tags;
 
 }
