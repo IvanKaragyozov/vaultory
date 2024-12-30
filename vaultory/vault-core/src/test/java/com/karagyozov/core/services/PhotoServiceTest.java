@@ -1,12 +1,9 @@
 package com.karagyozov.core.services;
 
 
-import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.stream.Stream;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -41,10 +38,9 @@ class PhotoServiceTest
 
 
     @Test
-    void testLoadPhotosFromDirectory_Success() throws IOException
+    void testLoadPhotosFromDirectory_Success()
     {
         final Path dummyPath = Paths.get("src/test/resources/dummyPhotos");
-        final Path photoPath = dummyPath.resolve("album1/photo1.jpg");
 
         photoService.loadPhotosFromDirectory(dummyPath);
 
@@ -54,7 +50,6 @@ class PhotoServiceTest
 
         final List<PhotoEntity> extractedImages = captor.getAllValues();
         Assertions.assertEquals(5, extractedImages.size());
-//        Assertions.assertEquals("image1.png", savedPhoto.getPhotoName());
     }
 
 
