@@ -21,6 +21,7 @@
         <module>vault-starter</module>
         <module>vault-domain</module>
         <module>vault-core</module>
+        <module>vault-gui</module>
     </modules>
 
     <properties>

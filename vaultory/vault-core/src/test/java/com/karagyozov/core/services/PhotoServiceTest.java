@@ -45,7 +45,8 @@ class PhotoServiceTest
         photoService.loadPhotosFromDirectory(dummyPath);
 
         final ArgumentCaptor<PhotoEntity> captor = ArgumentCaptor.forClass(PhotoEntity.class);
-        Mockito.verify(photoRepository, Mockito.times(5))
+        final int numberOfPhotosInDirectory = 5;
+        Mockito.verify(photoRepository, Mockito.times(numberOfPhotosInDirectory))
                .save(captor.capture());
 
         final List<PhotoEntity> extractedImages = captor.getAllValues();
